@@ -1,5 +1,5 @@
+const Denomination = [50, 20 ,10 ,5 ,3 ,2 ,1];
 function minChange(amount){
-    const Denomination = [50, 20 ,10 ,5 ,3 ,2 ,1];
     const result = {};
 for (let a = 0; a < Denomination.length ; a++){
     const Denominationn = Denomination[a]
@@ -11,10 +11,11 @@ for (let a = 0; a < Denomination.length ; a++){
 }
 return result
 }
-const amount = 342;
+const amount = 115;
 const change = minChange(amount);
-console.log(`Сума: ${amount}`);
-console.log(`Мінімальна кількість купюр для виплати:`);
-
-
+console.log(`sum: ${amount}`);
+console.log(`Minimum number of banknotes for payment:`);
+for(var key in change){
+    console.log(`nominal: ${key} count: ${change[key]}`);
+}
 
