@@ -11,7 +11,7 @@ for (let a = 0; a < Denomination.length ; a++){
 }
 return result
 }
-const amount = 115;
+const amount = parseInt(prompt("Enter the amount"));;
 const change = minChange(amount);
 console.log(`sum: ${amount}`);
 console.log(`Minimum number of banknotes for payment:`);
