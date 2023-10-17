@@ -18,4 +18,3 @@ console.log(`Minimum number of banknotes for payment:`);
 for(var key in change){
     console.log(`nominal: ${key} count: ${change[key]}`);
 }
-
