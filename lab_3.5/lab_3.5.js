@@ -1,16 +1,22 @@
-function BubbleSort(arr, des = false) {
+function BubbleSort(arr, des = false) 
+{
     var n = arr.length;
     for (var i = 0; i < n; i++) {
-        for (var j = 0; j < n - i - 1; j++) {
+        for (var j = 0; j < n - i - 1; j++) 
+        {
             var compareResult;
 
-            if (des) {
+            if (des) 
+            {
                 compareResult = arr[j] < arr[j + 1];
-            } else {
+            } 
+            else 
+            {
                 compareResult = arr[j] > arr[j + 1];
             }
 
-            if (compareResult) {
+            if (compareResult) 
+            {
                 var temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -19,29 +25,35 @@ function BubbleSort(arr, des = false) {
     }
 }
 
-function getSymbolKind(str) {
+function getSymbolKind(str)
+ {
     let result = 0;
     let code = str.charCodeAt(0);
-    if ((code > 64 && code < 91) || (code > 96 && code < 123)) {
-        result = 1; // буква
-    } else if ((code > 47 && code < 58)) {
-        result = 2; // цифра
+    if ((code > 64 && code < 91) || (code > 96 && code < 123)) 
+    {
+        result = 1; 
+    } else if ((code > 47 && code < 58)) 
+    {
+        result = 2;
     }
     return result;
 }
 
-function sortText(inputText) {
+function sortText(inputText) 
+{
     let currentGroupKind = 0;
     let currentGroup = "";
     let output = "";
 
-    for (let i = 0; i < inputText.length; i++) {
+    for (let i = 0; i < inputText.length; i++) 
+    {
         let symbol = inputText[i];
         let symbolKind = getSymbolKind(symbol);
 
-        if (symbolKind !== currentGroupKind) {
-            if (currentGroupKind === 1 || currentGroupKind === 2) {
-                // Используем вашу функцию BubbleSort для сортировки
+        if (symbolKind !== currentGroupKind) 
+        {
+            if (currentGroupKind === 1 || currentGroupKind === 2) 
+            {
                 const groupArray = currentGroup.split('');
                 BubbleSort(groupArray, currentGroupKind === 2);
                 currentGroup = groupArray.join('');
@@ -54,7 +66,8 @@ function sortText(inputText) {
         currentGroup = currentGroup + symbol;
     }
 
-    if (currentGroupKind === 1 || currentGroupKind === 2) {
+    if (currentGroupKind === 1 || currentGroupKind === 2) 
+    {
         const groupArray = currentGroup.split('');
         BubbleSort(groupArray, currentGroupKind === 2);
         currentGroup = groupArray.join('');
