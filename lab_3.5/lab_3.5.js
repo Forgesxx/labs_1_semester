@@ -46,4 +46,22 @@ function sortText(inputText) {
 //var inputText = prompt("");
 var inputText = "dcba1234";
 var outputText = sortText(inputText);
+
 console.log(outputText);
+
+let testString =     "cba1076/’abfc3785,’’3946f";
+let expectedString = "abc7610/’abcf8753,’’9643f";
+let outputString = sortText(testString);
+
+console.log("test string:       " + testString);
+console.log("expected string:   " + expectedString);
+console.log("output string:     " + outputString);
+
+if (expectedString === outputString)
+{
+    console.log("[Test Passed]");
+}
+else
+{
+    console.log("[Test Failed]");
+}
