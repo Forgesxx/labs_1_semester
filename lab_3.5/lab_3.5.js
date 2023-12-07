@@ -39,6 +39,26 @@ function getSymbolKind(str)
     return result;
 }
 
+function splitString(aStr)
+{
+    let arr = [];
+    for (let i=0; i<aStr.length; i++)
+    {
+        arr.push(aStr[i]);
+    }
+    return arr;
+}
+
+function joinArr(anArr)
+{
+    let str = "";
+    for (let i=0; i<anArr.length; i++)
+    {
+        str = str + anArr[i];
+    }
+    return str;
+}
+
 function sortText(inputText) 
 {
     let currentGroupKind = 0;
@@ -54,9 +74,9 @@ function sortText(inputText)
         {
             if (currentGroupKind === 1 || currentGroupKind === 2) 
             {
-                const groupArray = currentGroup.split('');
+                const groupArray = splitString(currentGroup);
                 BubbleSort(groupArray, currentGroupKind === 2);
-                currentGroup = groupArray.join('');
+                currentGroup = joinArr(groupArray);
             }
             output = output + currentGroup;
             currentGroup = "";
@@ -68,9 +88,9 @@ function sortText(inputText)
 
     if (currentGroupKind === 1 || currentGroupKind === 2) 
     {
-        const groupArray = currentGroup.split('');
+        const groupArray = splitString(currentGroup);
         BubbleSort(groupArray, currentGroupKind === 2);
-        currentGroup = groupArray.join('');
+        currentGroup = joinArr(groupArray);
     }
 
     output = output + currentGroup;
